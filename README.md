@@ -13,6 +13,9 @@
 
 ## Выкладка
 
+| 02 | Оргструктура — ОАО «Джамаст» | https://jmst.lovable.app/ |
+| 03 | Оргструктура — ОАО «Шугнов Голд» | https://river-gold-tracker.lovable.app/ |
+
 GitHub Pages: Settings → Pages → Deploy from a branch → `main` / `(root)`. Адрес: https://isosaid.github.io/portal-rukovodstva/
 
 Разработано Отделом автоматизации холдинга ООО «Авесто Групп» · ISJ
