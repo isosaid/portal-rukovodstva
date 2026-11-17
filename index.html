@@ -25,6 +25,7 @@
     --c1:#5FB3A3;   /* оргструктура */
     --c2:#7C8CF0;   /* HR-портал */
     --c3:#D08A5B;   /* CRM */
+    --c4:#B48CD8;   /* реестр юрлиц */
     --ok:#4FBF8B;
     --sans:"Manrope",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
     --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
@@ -89,10 +90,10 @@
   .lead{margin:0;font-size:17px;color:var(--muted);max-width:620px}
 
   /* ── карточки ── */
-  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding-bottom:28px}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;padding-bottom:28px}
   .card{
     --c:var(--gold);
-    position:relative;display:flex;flex-direction:column;min-height:340px;
+    position:relative;display:flex;flex-direction:column;min-height:300px;
     padding:26px 26px 22px;border-radius:var(--radius);
     background:var(--panel);border:1px solid var(--line);
     backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
@@ -100,9 +101,11 @@
     overflow:hidden;
     opacity:0;transform:translateY(14px);animation:rise .6s cubic-bezier(.2,.7,.2,1) forwards;
   }
-  .card:nth-child(1){--c:var(--c1);animation-delay:.05s}
-  .card:nth-child(2){--c:var(--c2);animation-delay:.13s}
-  .card:nth-child(3){--c:var(--c3);animation-delay:.21s}
+  .card.k-org{--c:var(--c1)} .card.k-reg{--c:var(--c4)} .card.k-hr{--c:var(--c2)} .card.k-crm{--c:var(--c3)}
+  .card:nth-child(1){animation-delay:.05s}
+  .card:nth-child(2){animation-delay:.12s}
+  .card:nth-child(3){animation-delay:.19s}
+  .card:nth-child(4){animation-delay:.26s}
   @keyframes rise{to{opacity:1;transform:none}}
   .card::before{ /* цветная линия сверху */
     content:"";position:absolute;left:0;right:0;top:0;height:2px;
@@ -160,7 +163,7 @@
   .isj{display:inline-flex;align-items:center;gap:10px}
   .isj i{font-style:normal;font-family:var(--mono);font-weight:500;font-size:11px;color:var(--gold);padding:3px 8px;border:1px solid rgba(201,168,106,.35);border-radius:6px}
 
-  @media (max-width:980px){
+  @media (max-width:760px){
     .grid{grid-template-columns:1fr}
     .card{min-height:0}
     .hero{padding:44px 0 30px}
@@ -208,12 +211,12 @@
     <section class="hero">
       <div class="eyebrow">Единая точка входа</div>
       <h1>Управленческие системы <em>холдинга</em></h1>
-      <p class="lead">Структура, персонал и CRM — три рабочих инструмента руководителя в одном меню. Выберите раздел.</p>
+      <p class="lead">Структура, юрлица, персонал и CRM — четыре рабочих инструмента руководителя в одном меню. Выберите раздел.</p>
     </section>
 
     <nav class="grid" aria-label="Разделы портала">
 
-      <article class="card">
+      <article class="card k-org">
         <div class="top">
           <div class="icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="5" rx="1.2"/><rect x="2.5" y="16" width="6" height="5" rx="1.2"/><rect x="15.5" y="16" width="6" height="5" rx="1.2"/><path d="M12 8v4M5.5 16v-2.5a1.5 1.5 0 0 1 1.5-1.5h10a1.5 1.5 0 0 1 1.5 1.5V16"/></svg>
@@ -236,12 +239,35 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card k-reg">
+        <div class="top">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M8.5 12.5h7M8.5 16h7"/></svg>
+          </div>
+          <span class="num">02</span>
+        </div>
+        <h2>Реестр юрлиц</h2>
+        <p>Реестр юридических лиц холдинга (Феҳристи ҷамъиятҳо): реквизиты компаний и выписки в PDF.</p>
+        <div class="chips">
+          <span class="chip">Компании</span><span class="chip">Реквизиты</span><span class="chip">Выписки PDF</span>
+        </div>
+        <div class="foot">
+          <span class="host">isosaid.github.io/avesto-reestr</span>
+          <a class="go" data-key="2" target="_blank" rel="noopener"
+             href="https://isosaid.github.io/avesto-reestr/"
+             aria-label="Открыть реестр юридических лиц">
+            Открыть
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="card k-hr">
         <div class="top">
           <div class="icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 20.5h17"/><rect x="5" y="12" width="3.4" height="6" rx=".8"/><rect x="10.3" y="7.5" width="3.4" height="10.5" rx=".8"/><rect x="15.6" y="3.5" width="3.4" height="14.5" rx=".8"/></svg>
           </div>
-          <span class="num">02</span>
+          <span class="num">03</span>
         </div>
         <h2>HR-портал</h2>
         <p>Аналитические панели HR-департамента: найм, движение персонала и обучение по компаниям холдинга.</p>
@@ -252,7 +278,7 @@
         </div>
         <div class="foot">
           <span class="host">hr-portal-olive-alpha.vercel.app</span>
-          <a class="go" data-key="2" target="_blank" rel="noopener"
+          <a class="go" data-key="3" target="_blank" rel="noopener"
              href="https://hr-portal-olive-alpha.vercel.app/"
              aria-label="Открыть HR-портал">
             Открыть
@@ -261,12 +287,12 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card k-crm">
         <div class="top">
           <div class="icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7.5" height="7.5" rx="1.6"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="1.6"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="1.6"/><path d="M17.25 14v6.5M14 17.25h6.5"/></svg>
           </div>
-          <span class="num">03</span>
+          <span class="num">04</span>
         </div>
         <h2>CRM · Битрикс24</h2>
         <p>Приложение корпоративного портала crm.avesto.tj. Открывается под вашей учётной записью Битрикс24.</p>
@@ -275,7 +301,7 @@
         </div>
         <div class="foot">
           <span class="host">crm.avesto.tj</span>
-          <a class="go" data-key="3" target="_blank" rel="noopener"
+          <a class="go" data-key="4" target="_blank" rel="noopener"
              href="https://crm.avesto.tj/marketplace/app/72/"
              aria-label="Открыть приложение в CRM">
             Открыть
@@ -286,14 +312,14 @@
 
     </nav>
 
-    <div class="hint">Быстрый переход: <kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd> — разделы открываются в новой вкладке</div>
+    <div class="hint">Быстрый переход: <kbd>1</kbd>–<kbd>4</kbd> — разделы открываются в новой вкладке</div>
   </div>
 </main>
 
 <footer>
   <div class="wrap fbar">
     <span class="isj"><i>ISJ</i> Разработано Отделом автоматизации холдинга ООО «Авесто Групп»</span>
-    <span>2026 · v1.0</span>
+    <span>2026 · v1.1</span>
   </div>
 </footer>
 

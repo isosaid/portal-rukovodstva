@@ -5,10 +5,11 @@
 | № | Раздел | Ссылка |
 |---|--------|--------|
 | 01 | Оргструктура | https://avestogroup-structure.up.railway.app/ |
-| 02 | HR-портал (Рекрутинг, Кадровое движение, Обучение) | https://hr-portal-olive-alpha.vercel.app/ |
-| 03 | CRM · Битрикс24, приложение № 72 | https://crm.avesto.tj/marketplace/app/72/ |
+| 02 | Реестр юрлиц | https://isosaid.github.io/avesto-reestr/ |
+| 03 | HR-портал (Рекрутинг, Кадровое движение, Обучение) | https://hr-portal-olive-alpha.vercel.app/ |
+| 04 | CRM · Битрикс24, приложение № 72 | https://crm.avesto.tj/marketplace/app/72/ |
 
-Клавиши `1`–`3` открывают разделы в новой вкладке.
+Клавиши `1`–`4` открывают разделы в новой вкладке.
 
 ## Выкладка
 
